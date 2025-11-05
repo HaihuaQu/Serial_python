@@ -1,4 +1,5 @@
 import random
+import datetime
 
 # 定义可能的角色、状态和标记
 roles = ["Admin", "Editor", "Viewer"]
@@ -49,6 +50,11 @@ def check_permission(user):
             permission = "Limited Read Access" if tag == "Premium" else "No Access"
     
     return permission
+
+# 输出当前时间
+current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+print(f"当前时间: {current_time}")
+print()
 
 # 输出结果（优化对齐）
 print("{:<6} {:<10} {:<12} {:<10} {:<20}".format("用户ID", "角色", "状态", "标记", "最终权限"))
